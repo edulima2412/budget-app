@@ -34,6 +34,10 @@ export class DataBindingComponent implements OnInit {
     alert('Botao clicado!');
   }
 
+  onMudouValor(evento){
+    console.log(evento.novoValor);
+  }
+
   onKeyUp(evento: KeyboardEvent){
     console.log();
     this.valorAtual = (<HTMLInputElement>evento.target).value;
