@@ -67,7 +67,7 @@
       </div>
     </div>
   </article> -->
-  <article>
+  <!-- <article>
     <h3>Event binding</h3>
     <div>
       <button (click)="botaoClicado()" class="btn btn-primary">
@@ -89,6 +89,28 @@
         [class.highlight]="isMouseOver"
         >Passe o mouse sobre mim</span
       >
+    </div>
+  </article> -->
+  <article class="two-way-binding">
+    <h3>Two-way data binding</h3>
+    <div>
+      <input type="text" 
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+
+      <input type="text" 
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+
+      <input type="text" [(ngModel)]="nome" />
+      <p>Voce digitou: {{ nome }}</p>
+    </div>
+    <div>
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos. </p>
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="text" [(ngModel)]="pessoa.idade" />
     </div>
   </article>
 </section>
