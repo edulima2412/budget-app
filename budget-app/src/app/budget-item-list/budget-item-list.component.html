@@ -2,10 +2,34 @@
     <div class="budget-items-container">
         <div class="incomes-column">
             <h1>Receitas</h1>
+
+            <div class="budget-items">
+                <div *ngFor="let item of budgetItems" >
+                    <app-budget-item-card
+                        *ngIf="item.amount >= 0" 
+                        [isIncome]="true"
+                        style="margin-bottom: 10px;
+                               display: block;"
+                    >
+                    </app-budget-item-card>
+                </div>
+            </div>
         </div>
 
         <div class="expenses-column">
             <h1>Despesas</h1>
+
+            <div class="budget-items">
+                <div *ngFor="let item of budgetItems" >
+                    <app-budget-item-card
+                        *ngIf="item.amount < 0" 
+                        [isIncome]="false"
+                        style="margin-bottom: 10px;
+                               display: block;"
+                    >
+                    </app-budget-item-card>
+                </div>
+            </div>
         </div>
     </div>
 </section>
